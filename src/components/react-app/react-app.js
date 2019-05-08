@@ -3,21 +3,13 @@ import { render } from 'react-dom'
 import { App } from './App'
 
 export class ReactApp extends HTMLElement {
-  static get name () {
-    return 'react-app'
-  }
 
-  static get observedAttributes () {
-    return ['error-mode', 'title']
-  }
+  static get name () { return 'react-app' }
+  static get observedAttributes () { return ['error-mode', 'title'] }
 
-  getTitle () {
-    return this.getAttribute('title')
-  }
+  getTitle () { return this.getAttribute('title') }
 
-  get errorMode () {
-    return this.hasAttribute('error-mode')
-  }
+  get errorMode () { return this.hasAttribute('error-mode') }
 
   set errorMode (val) {
     if (val) {
@@ -45,9 +37,7 @@ export class ReactApp extends HTMLElement {
       this.produceError(e)
       return
     }
-
     console.log('ReactApp connected')
-
     this.render()
   }
 

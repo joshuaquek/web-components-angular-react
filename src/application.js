@@ -7,8 +7,7 @@ export class Application {
 
     bootstrap(root) {
         this.root = root;
-
-        this.root.innerHTML = `
+        this.root.innerHTML = /*html*/ ` 
             <div class="row">
                 <h1>Hello web-components</h1>
 
@@ -24,24 +23,10 @@ export class Application {
                     <angular-app title="Angular Separate Running App"></angular-app>
                     <react-app title="React Separate Running App"></react-app>
                 </div>
-                
-                <div>
-                    <h2>Rendering Apps in Same Container</h2>
-
-                    <div>
-                        <p>Error Mode</p>
-                        <input type="radio" name="errorMode" value="0" checked> Disabled
-                        <input type="radio" name="errorMode" value="1"> Enabled
-                    </div>
-
-                    <div>
-                        <button data-app="angular-app">Load Angular app</button>
-                        <button data-app="react-app">Load React app</button>
-                    </div>
-                    <div class="container"></div>
-                </div>
             </div>
-            `;
+        `
+
+            
 
         this.container = this.root.querySelector('.container');
         this.root.addEventListener('keyup', this.handleInputChange);
@@ -122,3 +107,21 @@ export function render(Component, element) {
     const component = new Component();
     component.bootstrap(element);
 }
+
+
+let oldCode = /*html*/ ` 
+  <div>
+    <h2>Rendering Apps in Same Container</h2>
+    <div>
+      <p>Error Mode</p>
+      <input type="radio" name="errorMode" value="0" checked> Disabled
+      <input type="radio" name="errorMode" value="1"> Enabled
+    </div>
+
+    <div>
+      <button data-app="angular-app">Load Angular app</button>
+      <button data-app="react-app">Load React app</button>
+    </div>
+  </div>
+  <div class="container"></div>
+`
