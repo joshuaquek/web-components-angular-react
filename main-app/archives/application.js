@@ -7,7 +7,7 @@ export class Application {
 
     bootstrap(root) {
         this.root = root;
-        this.root.innerHTML = /*html*/ ` 
+        this.root.innerHTML = ` 
             <div class="row">
                 <h1>Hello web-components</h1>
 
@@ -109,7 +109,18 @@ export function render(Component, element) {
 }
 
 
-let oldCode = /*html*/ ` 
+
+
+
+
+
+
+
+
+
+
+
+let oldCode = ` 
   <div>
     <h2>Rendering Apps in Same Container</h2>
     <div>

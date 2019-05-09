@@ -9,20 +9,6 @@ export class ReactApp extends HTMLElement {
 
   getTitle () { return this.getAttribute('title') }
 
-  get errorMode () { return this.hasAttribute('error-mode') }
-
-  set errorMode (val) {
-    if (val) {
-      this.setAttribute('error-mode', '')
-    } else {
-      this.removeAttribute('error-mode')
-    }
-  }
-
-  produceError (e) {
-    this.dispatchEvent(new CustomEvent('error', { detail: e }))
-  }
-
   constructor () {
     super()
     console.log('ReactApp constructor', this)
