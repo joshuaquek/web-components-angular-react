@@ -2,9 +2,7 @@ import * as angular from 'angular'
 import { AppModule, html } from './app.module'
 
 export class AngularApp extends HTMLElement {
-  static get name () {
-    return 'angular-app'
-  }
+  // static get name () { return 'angular-app'}
 
   static get observedAttributes () {
     return ['error-mode', 'title']

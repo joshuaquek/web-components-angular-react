@@ -1,3 +1,4 @@
-import { ReactApp } from './react-app';
+import { ReactApp } from './react-app'
 
-window.customElements.define(ReactApp.name, ReactApp);
+const htmlTagName = 'react-app'
+window.customElements.define(htmlTagName, ReactApp)

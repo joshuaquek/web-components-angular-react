@@ -4,7 +4,7 @@ import { App } from './App'
 
 export class ReactApp extends HTMLElement {
 
-  static get name () { return 'react-app' }
+  // static get name () { return 'react-app' }
   static get observedAttributes () { return ['error-mode', 'title'] }
 
   getTitle () { return this.getAttribute('title') }
@@ -13,7 +13,7 @@ export class ReactApp extends HTMLElement {
     super()
     console.log('ReactApp constructor', this)
   }
-
+  
   connectedCallback () {
     try {
       if (this.errorMode) {

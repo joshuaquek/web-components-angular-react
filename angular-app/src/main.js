@@ -1,3 +1,5 @@
-import { AngularApp } from './angular-app';
+import { AngularApp } from './angular-app'
 
-window.customElements.define(AngularApp.name, AngularApp);
+const htmlTagName = 'angular-app'
+
+window.customElements.define(htmlTagName, AngularApp)
