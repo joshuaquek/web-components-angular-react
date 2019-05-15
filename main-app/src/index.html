@@ -1,24 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Web components loader</title>
-    <script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks.polyfills.entry %>"></script>
-    <link rel="import" href="./components/angular-app.html">
-    <link rel="import" href="./components/react-app.html">
-    <style>
-        .row {
-            display: flex;
-            flex-direction: row;
-        }
-        .row > * {
-            flex: 1;
-        }
-    </style>
-</head>
-<body>
-    <div id="app"></div>
 
-    <script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+<head>
+  <meta charset="UTF-8">
+  <title>Web components loader</title>
+  <script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks.polyfills.entry %>"></script>
+  <!-- <link rel="import" href="./components/angular-app.html"> -->
+  <link rel="import" href="http://localhost:4302/myWebapp.html">
+  <!-- <link rel="import" href="./components/react-app.html"> -->
+  <link rel="import" href="http://localhost:4301/myWebapp.html">
+  <style>
+    .row {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .row>* {
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="row">
+      <h1>Hello web-components</h1>
+
+      <div style="margin-top: 3rem">
+        <label for="title">Title:</label>
+        <input id="customTitle" name="title" value="Hello World!">
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <h2>Separately Running Multiple Apps</h2>
+        <angular-app title="Angular Separate Running App"></angular-app>
+        <react-app title="React Separate Running App"></react-app>
+      </div>
+    </div>
+  </div>
+  <!-- run your custom scripts after html page loads -->
+
+  <!-- ...you can run it from the bundle (below)... -->
+  <script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+
+  <!-- ...or you can run it inline here within this HTML file (below) -->
+  <script>
+    (function () { // Run on page load
+
+      const customTitleInput = document.getElementById('customTitle') // Get the value from our text input
+
+      customTitleInput.addEventListener('input', (event) => { // When the value of this text input changes...
+        
+        let customTitleString = event.target.value // Get the value of this textinput
+
+        let angularApp = document.querySelector("angular-app")
+        angularApp.setAttribute('title', customTitleString);
+
+        let reactApp = document.querySelector("react-app")
+        reactApp.setAttribute('title', customTitleString);
+
+      })
+
+
+    })();
+  </script>
 </body>
+
 </html>

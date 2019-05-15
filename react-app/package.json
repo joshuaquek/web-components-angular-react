@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --open",
+    "start": "webpack-dev-server --progress --open --port 4301",
     "build": "webpack"
   },
   "keywords": [],
