@@ -4,7 +4,7 @@ export class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      hello: 'React Web Component'
+      hello: 'React Wesdsdsdbasdasds'
     }
   }
 
