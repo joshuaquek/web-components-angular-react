@@ -6,8 +6,8 @@ module.exports = (env) => {
 
   return {
     entry: {
-      polyfills: root('src/polyfills.js'),
-      main: root('src/main.js')
+      'polyfills': root('src/polyfills.js'),
+      'main': root('src/index.js')
     },
     output: {
       path: root('dist'),
