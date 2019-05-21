@@ -1,5 +1,5 @@
 import * as angular from 'angular'
-import { AppModule, html } from '../../webapp/app.module'
+import { AppModule, html } from '../webapp/app.module'
 
 export const loadAngularApp = function (thisClass) {
   thisClass.innerHTML = html
