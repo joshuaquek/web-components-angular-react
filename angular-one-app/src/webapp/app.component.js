@@ -1,5 +1,5 @@
 export class AppComponent {
-    hello = 'Angular Web Component';
+    hello = 'Angular One Web Component';
 
     static $inject = ['$http', 'config'];
 

@@ -9,7 +9,7 @@ export const loadAngularApp = function (thisClass) {
   angular.module(name, [AppModule])
     .value('config', { title: thisClass.title })
     .run(() => {
-      console.log(`Angular module ${AppModule} instance is running`)
+      console.log(`Angular One module ${AppModule} instance is running`)
       thisClass.dispatchEvent(new Event('load'))
     })
 

@@ -5,11 +5,10 @@
   <meta charset="UTF-8">
   <title>Web components loader</title>
   <script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks.polyfills.entry %>"></script>
-  <!-- <link rel="import" href="./components/angular-app.html"> -->
-  <link rel="import" href="http://localhost:4302/myWebapp.html">
+  <link rel="import" href="http://localhost:4301/webcomponent.html">
+  <link rel="import" href="http://localhost:4302/webcomponent.html">
+  <link rel="import" href="http://localhost:4303/webcomponent.html">
 
-  <!-- <link rel="import" href="./components/react-app.html"> -->
-  <link rel="import" href="http://localhost:4301/myWebapp.html">
 
   <style>
     .row {
@@ -37,8 +36,15 @@
     <div class="row">
       <div>
         <h2>Separately Running Multiple Apps</h2>
-        <angular-app title="Angular Separate Running App"></angular-app>
+      <button onclick="removeReactApp()">Remove "react-app" html tag</button>
+      <button onclick="addReactApp()">Add "react-app" html tag</button>
+      <br>
+      <button onclick="removeAngularOneApp()">Remove "angular-one-app" html tag</button>
+      <button onclick="addAngularOneApp()">Add "angular-one-app" html tag</button>
+
+        <angular-one-app title="Angular Separate Running App"></angular-one-app>
         <react-app title="React Separate Running App"></react-app>
+        <universal-app title="Universal Separate Running App"></universal-app>
       </div>
     </div>
   </div>
@@ -49,24 +55,36 @@
 
   <!-- ...or you can run it inline here within this HTML file (below) -->
   <script>
-    (function () { // Run on page load
+
 
       const customTitleInput = document.getElementById('customTitle') // Get the value from our text input
-
       customTitleInput.addEventListener('input', (event) => { // When the value of this text input changes...
-        
         let customTitleString = event.target.value // Get the value of this textinput
-
-        let angularApp = document.querySelector("angular-app")
+        let angularApp = document.querySelector("angular-one-app")
         angularApp.setAttribute('title', customTitleString);
-
         let reactApp = document.querySelector("react-app")
         reactApp.setAttribute('title', customTitleString);
-
       })
 
 
-    })();
+
+      function removeReactApp() {
+        document.querySelector('react-app').remove()
+      }
+
+      function addReactApp() {
+        document.querySelector('html').appendChild(document.createElement('react-app'))
+      }
+
+      function removeAngularOneApp() {
+        document.querySelector('angular-one-app').remove()
+      }
+
+      function addAngularOneApp() {
+        document.querySelector('html').appendChild(document.createElement('angular-one-app'))
+      }
+
+
   </script>
 </body>
 

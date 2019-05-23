@@ -1,10 +1,10 @@
 {
-  "name": "react-app",
+  "name": "universal-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --open --port 4301",
+    "start": "webpack-dev-server --progress --open --port 4303",
     "build": "webpack"
   },
   "keywords": [],
@@ -12,13 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^1.0.19",
-    "angular": "^1.5.8",
-    "http-server": "^0.9.0",
-    "react": "^15.3.1",
-    "react-dom": "^15.3.1",
-    "webcomponents-lite": "^0.6.0",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2"
+    "webcomponents-lite": "^0.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.32",

@@ -1,7 +1,7 @@
 import * as angular from 'angular'
 
 export const angularAppOnChange = function (thisClass, attrName, oldVal, newVal) {
-  console.log('Angular onChange', attrName, oldVal, newVal)
+  console.log('Angular One onChange', attrName, oldVal, newVal)
 
   if (!thisClass.$injector) { return } // End execution if the injector is not found
 

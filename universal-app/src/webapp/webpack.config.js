@@ -6,7 +6,6 @@ module.exports = (env) => {
 
   return {
     entry: {
-      'polyfills': root('src/polyfills.js'),
       'main': root('src/index.js')
     },
     output: {
@@ -39,7 +38,7 @@ module.exports = (env) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        filename: 'webcomponent.html',
+        filename: 'index.html',
         template: root('src/index.html'),
         inject: false
       })

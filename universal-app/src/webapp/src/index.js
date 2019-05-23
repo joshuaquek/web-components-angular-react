@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { render } from 'react-dom'
 import { BrowserRouter, Link } from 'react-router-dom'
 
 class App extends Component {
@@ -10,15 +11,16 @@ class App extends Component {
   }
 
   render () {
+    const { title, hello } = this.props
     return (
       <BrowserRouter>
         <div>
-          <h3>Title: {this.props.title}</h3>
-          <p>Greeting: {this.state.hello}</p>
+          <h3>Title: {title}</h3>
+          <p>Greeting: {hello}</p>
           <Link to='/'>Home</Link>
-          <br/>
+          <br />
           <Link to='/here'>Here</Link>
-          <br/>
+          <br />
           <Link to='/there'>There</Link>
         </div>
       </BrowserRouter>
@@ -26,4 +28,4 @@ class App extends Component {
   }
 }
 
-export default App
+render(<App />, document.getElementById('main'))

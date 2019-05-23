@@ -1,22 +1,21 @@
 {
-  "name": "angular-app",
+  "name": "react-small-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --open --port 4302",
+    "start": "webpack-dev-server --progress --open --port 4311",
     "build": "webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@webcomponents/webcomponentsjs": "^1.0.19",
-    "angular": "^1.5.8",
-    "http-server": "^0.9.0",
+    "axios": "^0.18.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
-    "webcomponents-lite": "^0.6.0"
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.32",
@@ -26,7 +25,6 @@
     "@babel/preset-env": "^7.0.0-beta.32",
     "@babel/preset-react": "^7.0.0-beta.32",
     "@babel/runtime": "^7.0.0-beta.32",
-    "@webcomponents/custom-elements": "^1.0.6",
     "babel-loader": "^8.0.0-beta.0",
     "html-webpack-plugin": "^2.30.1",
     "webpack": "^3.8.1",

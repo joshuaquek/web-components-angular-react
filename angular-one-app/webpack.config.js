@@ -39,7 +39,7 @@ module.exports = (env) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        filename: 'myWebapp.html',
+        filename: 'webcomponent.html',
         template: root('src/index.html'),
         inject: false
       })
